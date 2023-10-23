@@ -28,9 +28,9 @@
     <Filter Include="Servicers\RunnableService\Frame">
       <UniqueIdentifier>{bd14350b-70c4-4a3c-a4d8-afe7ccfbc1cb}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
+    <Filter Include="Servicers\Levels">
+      <UniqueIdentifier>{5a5dd349-9a7d-4d74-a780-1059747d39aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FrameController.h">
@@ -47,6 +47,12 @@
     </ClInclude>
     <ClInclude Include="RunnableService.h">
       <Filter>Servicers\RunnableService</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelsCorrection.h">
+      <Filter>Servicers\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Interval.h">
+      <Filter>Servicers\Levels</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +79,12 @@
     </ClCompile>
     <ClCompile Include="RunnableService.cpp">
       <Filter>Servicers\RunnableService</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelsCorrection.cpp">
+      <Filter>Servicers\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Interval.cpp">
+      <Filter>Servicers\Levels</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

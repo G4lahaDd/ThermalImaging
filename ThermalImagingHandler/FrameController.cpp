@@ -54,7 +54,7 @@ bool FrameController::Start(const char* path) {
 		throw message;
 	}
 	catch (...) {
-		throw "Error while initializing services";
+		throw "[ERROR] Frame Controller: Error while initializing services\n";
 	}
 
 }

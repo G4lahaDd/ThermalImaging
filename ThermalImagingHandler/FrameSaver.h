@@ -12,7 +12,7 @@ class FrameSaver : RunnableService
 
 	int width; 
 	int height;
-	cv::Size* frameSize;
+	cv::Size frameSize;
 	cv::VideoWriter* writer;
 	SyncQueue<char>* inputQueue;
 public:
