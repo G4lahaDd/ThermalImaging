@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Controllers">
+      <UniqueIdentifier>{c6a51b14-52e2-4a02-b554-7b49e329cf2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Servicers">
+      <UniqueIdentifier>{7de8bbb9-e283-4bbe-b4f1-cddd48fa6269}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{03ca27ba-934a-4cbd-8883-94687318f93e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Servicers\RunnableService">
+      <UniqueIdentifier>{4682bfdb-1830-4755-91d4-d84cef4ea1b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Servicers\RunnableService\Frame">
+      <UniqueIdentifier>{bd14350b-70c4-4a3c-a4d8-afe7ccfbc1cb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FrameController.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameProcessor.h">
+      <Filter>Servicers\RunnableService\Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameReader.h">
+      <Filter>Servicers\RunnableService\Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameSaver.h">
+      <Filter>Servicers\RunnableService\Frame</Filter>
+    </ClInclude>
+    <ClInclude Include="RunnableService.h">
+      <Filter>Servicers\RunnableService</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameProcessor.cpp">
+      <Filter>Servicers\RunnableService\Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameReader.cpp">
+      <Filter>Servicers\RunnableService\Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameSaver.cpp">
+      <Filter>Servicers\RunnableService\Frame</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.h">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="SyncQueue.h">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="RunnableService.cpp">
+      <Filter>Servicers\RunnableService</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
