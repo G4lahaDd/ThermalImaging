@@ -19,8 +19,6 @@ class FrameProcessor : RunnableService
 	LevelsCorrection* levels;
 
 	pixel_16bit* GetBounds(pixel_16bit*);
-	pixel_8bit* ProcessFrame(pixel_16bit*);
-	void TEST(pixel_16bit* rawFrame);
 public:
 	FrameProcessor(SyncQueue<pixel_16bit>* inputQueue, SyncQueue<pixel_8bit>* outputQueue, double gamma, int width, int height, CALLBACK(onCompleted));
 	void Run() override;

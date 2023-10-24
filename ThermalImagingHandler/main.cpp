@@ -8,18 +8,28 @@ double gamma = 2.2;
 
 int main(int argc, char* argv[])
 {
-	printf_s("START\n");
+	cout << "Press any button to start" << endl;
+	_getch();
+	cout << "START" << endl;
+	cout << "Press any button to stop" << endl;
+
+	FrameController* controller = nullptr;
 	try {
-		FrameController* controller = new FrameController(frameWidth, frameHeight, gamma, "C:\\Users\\ilya-\\Videos\\Captures\\Result.avi");
+		controller = new FrameController(frameWidth, frameHeight, gamma, "C:\\Users\\ilya-\\Videos\\Captures\\Result.mp4");
 		controller->Start("C:\\Users\\ilya-\\Downloads\\dump_13122019_145433.bin");
 	}
 	catch (const char* message) {
-		printf_s(message);
+		cout << message << endl;
 	}
 	catch (...) {
-		printf_s("Error while initializing frame controller");
+		cout << "Error while initializing frame controller" << endl;
 	}
-	printf_s("WAITING RESULTS\n");
+
 	_getch();
-	printf_s("END\n");
+
+	if (controller != nullptr && controller->IsActive())
+	{
+		controller->Stop();
+	}
+	cout << "END" << endl;
 }

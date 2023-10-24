@@ -10,9 +10,10 @@ using namespace std;
 
 class LevelsCorrection
 {
-	const double filterNoize = 0.005;//Процент максимального отклонения значений от нуля
-	const double pitSize = 0.20;//Минимальный размер в процентах ямы нулевых значений
-	
+	const double filterNoize = 0.0025;//Процент максимального отклонения значений от нуля
+	const double pitSize = 0.10;//Минимальный размер в процентах ямы нулевых значений
+	const double speedEffect = 0.3;
+
 	double gamma;
 
 	pixel_16bit* current;
@@ -21,17 +22,19 @@ class LevelsCorrection
 	int size;
 
 	pixel_16bit* levels;
+	double* speedLevels;
 	pixel_16bit levelsSize;
 	pixel_16bit maxLevel;
 	pixel_16bit min;
 	pixel_16bit max;
-	
+
 	list<Interval*> intervals;
 	double intervalsLength;
 
-	pixel_8bit GammaCorrection(double value);
+	pixel_8bit GammaCorrection(double value, pixel_16bit& pixel);
 	void GetBounds();
 	void GetLevels();
+	void GetSpeedLevels();
 	void CreateIntervals();
 	void ConvertValue(pixel_16bit* rawPixel, pixel_8bit* pixel);
 public:

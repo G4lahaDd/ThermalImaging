@@ -27,6 +27,7 @@ public:
 	bool Start(const char* path);
 	void OnEnd();
 	void Stop();
+	bool IsActive();
 };
 
 

@@ -1,8 +1,8 @@
 #include "Interval.h"
 
-Interval::Interval(int start) : start{ start } {
-	end = 0;
-	length = 0;
+Interval::Interval(int start) : start{ start }, end{start}
+{
+	length = -1;
 	value = 0;
 }
 

@@ -2,25 +2,34 @@
 #include "SyncQueue.h"
 
 FrameController::FrameController(int width, int height, double gamma, const char* outputFilename) : width{ width }, gamma{ gamma }, height{ height }, outputFilename{ outputFilename }
-{}
+{
+	isActive = false;
+}
 
 void FrameController::OnEnd() {
 	readerThread->join();
 	processorThread->join();
+	saver->Stop();
+	isActive = false;
 }
 
-void FrameController::Stop() {
-	reader->Stop();
-	processor->Stop();
-	saver->Stop();
+void FrameController::Stop()
+{
+	try {
+		reader->Stop();
+		processor->Stop();
+		saver->Stop();
 
-	readerThread->join();
-	processorThread->join();
-	processorThread->join();
-
-	delete reader;
-	delete processor;
-	delete saver;
+		delete reader;
+		delete processor;
+		delete saver;
+	}
+	catch (exception ex) {
+		cout << ex.what() << endl;
+	}
+	catch (...) {
+		cout << "[ERROR] Frame Controller: Error while terminate services\n";
+	}
 }
 
 bool FrameController::Start(const char* path) {
@@ -45,7 +54,6 @@ bool FrameController::Start(const char* path) {
 		auto readerCallback = [this]() { processor->InputClosed(); };
 		reader = (RunnableService*)(new FrameReader(f, rawFrames, width, height, readerCallback));
 
-
 		saverThread = new std::thread([this]() { saver->Run(); });
 		processorThread = new std::thread([this]() { processor->Run(); });
 		readerThread = new std::thread([this]() { reader->Run(); });
@@ -57,4 +65,9 @@ bool FrameController::Start(const char* path) {
 		throw "[ERROR] Frame Controller: Error while initializing services\n";
 	}
 
+	isActive = true;
+}
+
+bool FrameController::IsActive() {
+	return isActive;
 }

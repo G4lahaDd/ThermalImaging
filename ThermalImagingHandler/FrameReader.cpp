@@ -1,7 +1,7 @@
 #include "FrameReader.h"
 #include <string.h>
 #include <errno.h>
-
+#include <iostream>
 
 FrameReader::FrameReader(FILE* f, SyncQueue<pixel_16bit>* outputQueue, int width, int height, CALLBACK(onCompleted)) : RunnableService{ onCompleted }, height{ height }, width{ width }, outputQueue{ outputQueue }, f{ f }
 {
@@ -29,7 +29,7 @@ void FrameReader::Stop() {
 
 void FrameReader::Run() {
 	isActive = true;
-	printf_s("[INFO] READER: START\n");
+	std::cout << "[INFO] READER: START\n";
 	while (isActive && !feof(f))
 	{
 		pixel_16bit* frame = GetNext();
@@ -37,5 +37,5 @@ void FrameReader::Run() {
 	}
 	onCompleted();
 	Stop();
-	printf_s("[INFO] READER: END\n");
+	std::cout << "[INFO] READER: END\n";
 }

@@ -5,7 +5,7 @@ public:
 	int start;
 	int end;
 	int length;
-	int value;
+	double value;
 
 	Interval(int start);
 	int Close(int end);
