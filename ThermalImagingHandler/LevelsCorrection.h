@@ -10,9 +10,9 @@ using namespace std;
 
 class LevelsCorrection
 {
-	const double filterNoize = 0.0025;//Процент максимального отклонения значений от нуля
-	const double pitSize = 0.10;//Минимальный размер в процентах ямы нулевых значений
-	const double speedEffect = 0.3;
+	const double filterNoize = 0.002;//Процент максимального отклонения значений от нуля
+	const double pitSize = 0.20;//Минимальный размер в процентах ямы нулевых значений
+	const double speedEffect = 0.10;
 
 	double gamma;
 
